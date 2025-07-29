@@ -7,18 +7,24 @@ public class Funcionario {
 
     String nomeFuncionario;
     int idadeFuncionario;
-    int salario1, salario2, salario3; // correção: deveria usar array para armazenar os salários: double[] salario;
+    double[] salario;
 
     public void mostrarDadosDoFuncionario (){
 
         System.out.println("-- Informações do funcionário --");
         System.out.println("Nome: " + nomeFuncionario);
         System.out.println("Idade: " + idadeFuncionario);
-        System.out.printf("Últimos 3 salários do %s, foram:  %d %d %d \n", nomeFuncionario, salario1, salario2, salario3);
+        System.out.printf("Últimos salários do %s, foram: ", nomeFuncionario);
+        for (int i = 0; i < salario.length; i++) {
+            System.out.print(salario[i] + " ");
+        }
     }
 
+
     public double calcularMediaSalario() {
-        System.out.println("\nA média dos últimos salários do " + nomeFuncionario + " é: ");
-        return (double) salario1 + salario2 + salario3 / 3;
+        double soma = salario[0] + salario[1] + salario[2];
+        double media = soma / 3;
+        System.out.printf("\nA média dos últimos salários do " + nomeFuncionario + " é: %.2f", media);
+        return media;
     }
 }
