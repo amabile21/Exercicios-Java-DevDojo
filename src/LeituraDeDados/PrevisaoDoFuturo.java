@@ -12,7 +12,7 @@ public class PrevisaoDoFuturo {
         System.out.println("Faça uma pergunta e vou adivinhar seu futuro!");
         leituraDoTeclado.next();
 
-        int numeros = random.nextInt(1, 2);
+        int numeros = random.nextInt(1, 3);
 
         if (numeros == 1) {
             System.out.print("Sim!");
